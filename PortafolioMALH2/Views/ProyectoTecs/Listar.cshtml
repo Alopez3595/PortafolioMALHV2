@@ -1,0 +1,51 @@
+﻿@model List<ProyectoTecs> 
+
+@{
+    ViewData["Title"] = "Listar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h3>Lista de Tecnologías por Proyecto</h3>
+    </div>
+    <div class="card-body">
+        <hr />
+
+        <!-- Envuelve la lista desplegable y la tabla en un formulario -->
+        <form method="post" action="Listar">
+            <div class="col col-2">
+                @Html.DropDownList("NombresProyectos", new SelectList(ViewBag.NombresProyectos, "Value", "Text", ViewBag.NombreProyectoSeleccionado), "Todos los proyectos", new { @class = "form-control custom-dropdown", @onchange = "this.form.submit();" })
+
+            </div>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+
+                            <th>Nombre proyecto</th>
+                            <th>Descripción</th>
+                            <th>Nombre tecnología</th>
+                            <th>Versión</th>
+                            <th>Porcentaje</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.NombreProyecto</td>
+                                <td>@item.descripcion</td>
+                                <td>@item.NombreTecnologia</td>
+                                <td>@item.Version_tec</td>
+                                <td>@item.porcentaje</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </form>
+    </div>
+</div>
+
+

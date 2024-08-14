@@ -1,0 +1,51 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h3>Lista Desarrolladores</h3>
+    </div>
+    <div class="card-body">
+        <a asp-action="Guardar" asp-controller="Desarrollador"
+           class="btn btn-success">Crear Nuevo +</a>
+        <hr />
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre completo</th>
+                        <th>Fecha de nacimiento</th>
+                        <th>Número celular</th>
+                        <th>Correo electrónico</th>
+                        <th>Imagen URL</th>
+                        <th>Descripción</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                @* <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.NombreCompleto</td>
+                            <td>@item.FechaNacimineto</td>
+                            <td>@item.NumCel</td>
+                            <td>@item.CorreoElec</td>
+                            <td>@item.ImagenURL</td>
+                            <td>@item.Descripcion</td>
+                            <td>
+                                <a asp-action="Editar" asp-controller="DatosPersonales"
+                                   class="btn btn-primary btn-sm mb-1" asp-route-IdDatosPersonales="@item.Id">Editar</a>
+                                <a asp-action="Eliminar" asp-controller="DatosPersonales"
+                                   class="btn btn-danger btn-sm mb-1">Eliminar</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody> *@
+            </table>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,44 @@
+﻿@model DesarrolladorModel
+@{
+    ViewData["Title"] = "Guardar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h3>Lista Desarrolladores</h3>
+    </div>
+    <div class="card-body">
+        <form asp-action="Guardar" asp-controller="Desarrollador" method="post">
+            <div class="mb-3">
+                <label class="form-label">Nombre Completo</label>
+                <input asp-for="NombreCompleto" type="text" class="form-control" required/>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Fecha de Nacimiento</label>
+                <input asp-for="FechaNacimineto" type="date" class="form-control" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Número Celular</label>
+                <input asp-for="NumCel" type="text" class="form-control" required />
+                <span asp-validation-for="NumCel" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input asp-for="CorreoElec" type="email" class="form-control" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">URL de la imagen</label>
+                <input asp-for="ImagenURL" type="text" class="form-control" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Descripción personal</label>
+                <textarea asp-for="Descripcion" type="text" class="form-control" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Registrar</button>
+            <a asp-action="Listar" asp-controller="Desarrollador" 
+            class="btn btn-warning">Volver a Lista</a>
+        </form>
+        </div>
+    </div>
+
